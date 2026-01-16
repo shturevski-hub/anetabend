@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMBERS | ANETA BAND</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .members-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            padding-bottom: 100px;
+        }
+        .member-profile {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border-bottom: 1px solid #111;
+            padding-bottom: 60px;
+        }
+        .member-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #111;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Zoom effect on hover */
+        .member-profile:hover .member-img img { 
+            transform: scale(1.1); 
+        }
+        
+        .member-info h2 { font-size: 3rem; margin-bottom: 5px; }
+        .role-tag { font-weight: 900; color: #666; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
+        .skills { margin-bottom: 20px; }
+        .skill-item { display: inline-block; background: #fff; color: #000; padding: 4px 12px; font-size: 0.6rem; font-weight: 900; margin-right: 10px; border-radius: 2px; }
+        .bio { color: #aaa; line-height: 1.8; font-size: 0.9rem; max-width: 600px; }
+
+        @media (min-width: 992px) {
+            .member-profile { flex-direction: row; align-items: center; }
+            .member-img { width: 400px; min-width: 400px; }
+            .member-info { padding-left: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="desktop-nav">
+        <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">ANETA</a></div>
+        <div class="links">
+            <a href="index.html">BACK TO VAULT</a>
+        </div>
+    </nav>
+
+    <section style="margin-top: 100px;">
+        <h1 data-aos="fade-right" style="font-size: 4rem; margin-bottom: 80px;">THE<br><span class="outline">MEMBERS</span></h1>
+        
+        <div class="members-grid">
+            <div class="member-profile" data-aos="fade-up">
+                <div class="member-img"><img src="aneta.jpg" alt="Aneta"></div>
+                <div class="member-info">
+                    <span class="role-tag">LEAD VOCALS</span>
+                    <h2>ANETA</h2>
+                    <div class="skills">
+                        <span class="skill-item">POWER</span><span class="skill-item">STAGE PRESENCE</span>
+                    </div>
+                    <p class="bio">Анета Љумаковска е женски вокал најдобро позната од Анета и Група Молика.
+(Индивидуални Награди)
+Најдобар женски вокал На сите времиња
+Најуспешен музичар од Битола
+Гранд Продукција
+(Награди, Учество)
+Оскар на Популарност (2010)(2011)2012)
+7 богати албуми, и 4 DVD музички специјали.
+Анета е исто така добро позната по нејзината главна улога на Патот до Кенгурите (2012) и соработката со Солза и Смеа (2014).</p>
+
+                </div>
+            </div>
+
+            <div class="member-profile" data-aos="fade-up">
+                <div class="member-img"><img src="stiv.jpg" alt="Stiv"></div>
+                <div class="member-info">
+                    <span class="role-tag">ВОКАЛ</span>
+                    <h2>STIV</h2>
+                    <div class="skills">
+                        <span class="skill-item">Текстописец</span><span class="skill-item">Бек-Вокал</span>
+                    </div>
+                    <p class="bio">Стив Штуревски е долгогодишен машки вокал учествувајки во повеќе ансамбли, најдобро познат од Анета и Група Молика учествувајки во <b>3 Оскари на Популарност (2010)|(2011)|(2012), 7 богати Албуми , и 4 DVD музички специјали.</b> Стив е исто така текстописец и актер.
+Патот до Кенгурите (2012)
+Непријател (2020) | Солза и смеа (2014) </p>
+                </div>
+            </div>
+
+            <div class="member-profile" data-aos="fade-up">
+                <div class="member-img"><img src="https://images.unsplash.com/photo-1514525253361-bee8718a74a2?auto=format&fit=crop&w=600" alt="Rubin"></div>
+                <div class="member-info">
+                    <span class="role-tag">DRUMS</span>
+                    <h2>RUBIN</h2>
+                    <div class="skills">
+                        <span class="skill-item">PRECISION</span><span class="skill-item">RHYTHM</span>
+                    </div>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+
+            <div class="member-profile" data-aos="fade-up">
+                <div class="member-img"><img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=600" alt="karmata"></div>
+                <div class="member-info">
+                    <span class="role-tag">BASS</span>
+                    <h2>Александар (Кармата) Талевски</h2>
+                    <div class="skills">
+                        <span class="skill-item">Тапан</span><span class="skill-item">LOW END</span>
+                    </div>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+
+            <div class="member-profile" data-aos="fade-up">
+                <div class="member-img"><img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=600" alt="Ziso"></div>
+                <div class="member-info">
+                    <span class="role-tag">KEYBOARDS</span>
+                    <h2>ZISO</h2>
+                    <div class="skills">
+                        <span class="skill-item">ATMOSPHERE</span><span class="skill-item">MELODY</span>
+                    </div>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+
+            <div class="member-profile" data-aos="fade-up">
+                <div class="member-img"><img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600" alt="Vangel"></div>
+                <div class="member-info">
+                    <span class="role-tag">SAXOPHONE / PERC</span>
+                    <h2>VANGEL</h2>
+                    <div class="skills">
+                        <span class="skill-item">TEXTURE</span><span class="skill-item">ENERGY</span>
+                    </div>
+                    <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ANETA BAND . АВТОРСКИ ПРАВА СЕ ЗАШТИТЕНИ © .</p>
+	<p>Автоматска заштита: Авторските права постојат веднаш кога делото е фиксирано во опиплива форма, не е потребна регистрација за основните права.
+Владеечко право: Законот за авторски права и сродни права (2010) е главното законодавство, ажуриран за да се усогласи со директивите на ЕУ.
+Заштитени дела: Опфаќа широк опсег, вклучувајќи литература, уметност, софтвер, мултимедија и архитектонски дизајни.
+Меѓународно почитување: Северна Македонија е членка на Бернската конвенција, обезбедувајќи реципрочна заштита со другите земји-членки и се придржува до договорите на WIPO.
+Важност на регистрацијата: Иако е автоматска, официјалната регистрација (на пр., кај Министерството за култура или приватни тела) обезбедува витален доказ за авторство, особено важно за дигитални контексти и спорови.
+Времетраење: Стандардната заштита е доживотен век на авторот плус 70 години, со специфични правила за анонимни дела или заедничко авторство.
+Колективно управување: Организации како AZAS (Здружение на корисници на авторски права и сродни права) управуваат со правата за креаторите, особено за музика и филм.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>

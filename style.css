@@ -1,0 +1,60 @@
+:root { --bg: #000; --text: #fff; --gray: #666; }
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html {
+    scroll-behavior: smooth; /* Native smooth scroll */
+}
+
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+/* LOADER */
+#loader { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.8s ease, visibility 0.8s; }
+#loader.fade-out { opacity: 0; visibility: hidden; }
+.loader-logo { font-family: 'Montserrat'; font-weight: 900; font-size: 2rem; letter-spacing: 10px; color: #fff; margin-bottom: 20px; text-align: center;}
+.loader-bar { width: 150px; height: 2px; background: rgba(255,255,255,0.1); margin: 0 auto; overflow: hidden; }
+.progress { width: 0%; height: 100%; background: #fff; animation: load 1.5s ease-in-out forwards; }
+@keyframes load { 0% { width: 0%; } 100% { width: 100%; } }
+
+/* NAV */
+.desktop-nav { display: none; position: fixed; top: 0; width: 100%; padding: 30px 5%; justify-content: space-between; align-items: center; z-index: 100; background: linear-gradient(to bottom, #000, transparent); }
+.logo { font-family: 'Montserrat'; font-weight: 900; letter-spacing: 5px; }
+.desktop-nav a { color: #fff; text-decoration: none; font-weight: 900; font-size: 0.7rem; margin-left: 30px; letter-spacing: 2px; }
+.bottom-nav { position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.1); backdrop-filter: blur(15px); display: flex; gap: 30px; padding: 12px 25px; border-radius: 100px; z-index: 1000; }
+.bottom-nav a { color: #fff; text-decoration: none; font-size: 0.6rem; font-weight: 900; }
+
+/* HERO */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+h1 { font-family: 'Montserrat'; font-size: 15vw; line-height: 0.8; letter-spacing: -5px; }
+.outline { -webkit-text-stroke: 1px #fff; color: transparent; }
+.tagline { margin-top: 15px; font-weight: 900; font-size: 0.7rem; letter-spacing: 5px; color: var(--gray); text-transform: uppercase; }
+
+/* GRID */
+section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
+h2 { font-family: 'Montserrat'; font-size: 2.5rem; margin-bottom: 40px; font-weight: 900; }
+.mini-video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.thumb-box { width: 100%; aspect-ratio: 1/1; border-radius: 8px; overflow: hidden; background: #111; cursor: pointer; }
+.thumb-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; transition: 0.3s; }
+.thumb-box:hover img { opacity: 1; }
+.thumb-meta { margin-top: 8px; font-size: 0.55rem; font-weight: 900; color: var(--gray); }
+
+/* BOOKING & SOCIALS */
+.booking-card { text-align: center; background: #0a0a0a; padding: 60px 20px; border-radius: 15px; border: 1px solid #111; }
+.phone { display: block; font-family: 'Montserrat'; font-size: 1.5rem; color: #fff; text-decoration: none; margin: 20px 0; font-weight: 900; }
+.social-links { display: flex; justify-content: center; gap: 15px; }
+.social-links a { font-size: 0.6rem; font-weight: 900; color: #fff; text-decoration: none; border: 1px solid #333; padding: 10px; border-radius: 4px; }
+
+footer { text-align: center; padding: 40px; font-size: 0.6rem; color: var(--gray); font-weight: 900; letter-spacing: 2px; }
+
+@media (min-width: 992px) {
+    .desktop-nav { display: flex; }
+    .bottom-nav { display: none; }
+    .mini-video-grid { grid-template-columns: repeat(5, 1fr); }
+    h1 { font-size: 10rem; }
+}
+
+/* MODAL */
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; align-items: center; justify-content: center; }
+.modal.active { display: flex; }
+.video-container { width: 90%; max-width: 1000px; aspect-ratio: 16/9; }
+.video-container iframe { width: 100%; height: 100%; }
+.close-modal { position: absolute; top: 40px; right: 40px; font-size: 3rem; color: #fff; cursor: pointer; }
