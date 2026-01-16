@@ -175,6 +175,62 @@
                 </div>
             </div>
         </div>
+
+<a href="index.html" class="mobile-back-btn transition-link">BACK TO VAULT</a>
+
+<style>
+    .mobile-back-btn {
+        display: none;
+        position: fixed;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.6rem;
+        font-weight: 900;
+        padding: 12px 25px;
+        border-radius: 100px;
+        z-index: 1000;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        letter-spacing: 2px;
+    }
+
+    @media (max-width: 991px) {
+        .mobile-back-btn { display: block; }
+    }
+</style>
+
+<div id="loader" class="fade-out">
+    <div class="loader-content">
+        <div class="loader-logo">ANETA</div>
+        <div class="loader-bar"><div class="progress"></div></div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Smooth Transition Logic
+    document.querySelectorAll('.transition-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = this.href;
+            const loader = document.getElementById('loader');
+            
+            loader.classList.remove('fade-out'); // Show loader
+            
+            setTimeout(() => {
+                window.location.href = target;
+            }, 800);
+        });
+    });
+</script>
+
+		
     </section>
 
     <footer>
@@ -193,6 +249,7 @@
 </body>
 
 </html>
+
 
 
 
