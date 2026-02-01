@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mk">
 <head>
-	<meta name="google-adsense-account" content="ca-pub-4430192056941435">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-4430192056941435">
     <title>ЧЛЕНОВИ | АНЕТА BAND</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
     <style>
+        /* Local Wiki Overrides */
+        .wiki-section {
+            margin-top: 80px;
+            padding-bottom: 100px;
+        }
+
+        .wiki-title {
+            font-size: clamp(3rem, 12vw, 6rem);
+            margin-bottom: 60px;
+            text-transform: uppercase;
+        }
+
         .members-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 60px;
-            padding-bottom: 100px;
         }
+
         .member-profile {
             display: flex;
             flex-direction: column;
@@ -23,6 +38,7 @@
             border-bottom: 1px solid #111;
             padding-bottom: 60px;
         }
+
         .member-img {
             width: 100%;
             aspect-ratio: 1/1;
@@ -30,32 +46,100 @@
             overflow: hidden;
             border-radius: 4px;
         }
+
         .member-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        /* Zoom effect on hover */
-        .member-profile:hover .member-img img { 
-            transform: scale(1.1); 
-        }
-        
-        .member-info h2 { font-size: 3rem; margin-bottom: 5px; }
-        .role-tag { font-weight: 900; color: #666; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
-        .skills { margin-bottom: 20px; }
-        .skill-item { display: inline-block; background: #fff; color: #000; padding: 4px 12px; font-size: 0.6rem; font-weight: 900; margin-right: 10px; border-radius: 2px; }
-        .bio { color: #aaa; line-height: 1.8; font-size: 0.9rem; max-width: 600px; }
 
+        .member-profile:hover .member-img img {
+            transform: scale(1.08);
+        }
+
+        .member-info h2 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .role-tag {
+            font-weight: 900;
+            color: #666;
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            margin-bottom: 15px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .skills {
+            margin-bottom: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background: #fff;
+            color: #000;
+            padding: 5px 12px;
+            font-size: 0.6rem;
+            font-weight: 900;
+            border-radius: 2px;
+            text-transform: uppercase;
+        }
+
+        .bio {
+            color: #aaa;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            max-width: 800px;
+        }
+
+        /* Desktop Layout */
         @media (min-width: 992px) {
-            .member-profile { flex-direction: row; align-items: center; }
+            .wiki-section { margin-top: 120px; }
+            .member-profile { flex-direction: row; align-items: flex-start; }
             .member-img { width: 400px; min-width: 400px; }
-            .member-info { padding-left: 40px; }
+            .member-info { padding-left: 50px; }
+        }
+
+        /* Fixed Navigation Fixes */
+        .mobile-back-btn {
+            display: none;
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 900;
+            padding: 14px 30px;
+            border-radius: 100px;
+            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 991px) {
+            .mobile-back-btn { display: block; }
         }
     </style>
 </head>
 <body>
+
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">АНЕТА БЕНД</div>
+            <div class="loader-bar"><div class="progress"></div></div>
+        </div>
+    </div>
 
     <nav class="desktop-nav">
         <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">АНЕТА БЕНД</a></div>
@@ -64,8 +148,8 @@
         </div>
     </nav>
 
-    <section style="margin-top: 100px;">
-        <h1 data-aos="fade-right" style="font-size: 4rem; margin-bottom: 80px;">WiKi<br><span class="outline"> </span></h1>
+    <section class="wiki-section">
+        <h1 data-aos="fade-right" class="wiki-title">WiKi<br><span class="outline">АНЕТА БЕНД</span></h1>
         
         <div class="members-grid">
             <div class="member-profile" data-aos="fade-up">
@@ -79,19 +163,18 @@
                     <p class="bio">Анета Љумаковска е родена на 25.07.1983 во Битола и е позната македонска пејачка и една од најпрепознатливите изведувачки на народна и новокомпонирана музика во Македонија и регионот. Заврши средно техничко училиште во родниот град. 
 Уште од млада возраст покажува силен интерес и талент за музика. Со својот специфичен глас, емоционална интерпретација и автентичен стил, Анета брзо го освојува вниманието на публиката и добива безброј награди на фестивали како во Македонија така и во соседните земји. Како поранешен член на “Молика“, има настапувано на бројни концерти, фестивали, и културни манифестации, како во земјата така и во дијаспората.
 Во текот на кариерата има изведено голем број хитови кои се добро прифатени од публиката и често се дел од македонската фолк-сцена. Анета сега е дел од Анета Бенд заедно со дел од членовите на “Молика” и е ценета поради својата професионалност, скромност и посветеност кон музиката, а нејзините настапи се препознатливи по силната емоција и контактот со публиката.</p>
-
                 </div>
             </div>
 
             <div class="member-profile" data-aos="fade-up">
                 <div class="member-img"><img src="stiv.jpg" alt="Stiv"></div>
                 <div class="member-info">
-                    <span class="role-tag">ВОКАЛ</span>
+                    <span class="role-tag">ВОКАЛ / ИНСТРУМЕНТИ</span>
                     <h2>СТИВ ШТУРЕВСКИ</h2>
                     <div class="skills">
                         <span class="skill-item">Текстописец</span><span class="skill-item">Бек-Вокал</span>
                     </div>
-                    <p class="bio">Стив Штуревски, македонски вокал, композитор, аранжер и актер. Роден на 22-1-1975год. во Охрид, Република Македонија. Завршена средно техничко образование. Музичко менторско образование. Потекнува од голема музичка фамилија, па поради тоа од најмала возраст целосно се посветува на музиката како Хармоникаш, Синтисајзер и главно Вокал. Членувал во многу македонски музички групи, кои што се "Група Фонтана" , "Група Молика". По долга кариера привремено се повлекува од професијата во 2016. Сега повторно да биде активен член на една од најдобрите македонски фолк групи "Анета Бенд". Има настапувано на секаде во светот како Америка, Австралија, Канада и поголемиот дел од Европа. Познат е по музичките хитови "Ајше" , "Лично Наде" , "Села Пелистерски" и многу други. Голема популарност и успех постигнува во 2012год. со снимањето на музичката комедија "Патот до кенгурите" , исто така се појавува и во 2020год во филмот "Непријател". Стив е исто така декориран со различни награди, како "Оскар на Популарност" 2010,2011,2012". Моментално неговата улога е Бек Вокал или Пратечки вокал и придружник на инструменти.</p>
+                    <p class="bio">Стив Штуревски, македонски вокал, композитор, аранжер и актер. Роден на 22-1-1975год. во Охрид, Република Македонија. Завршена средно техничко образование. Музичко менторско образование. Потекнува од голема музичка фамилија, па поради тоа од најмала возраст целосно се посветува на музиката како Хармоникаш, Синтисајзер и главно Вокал. Членувал во многу македонски музички групи, кои што се "Група Фонтана" , "Група Молика". По долга кариера привремено се повлекува од професијата во 2016. Сега повторно да биде активен член на една од најдобрите македонски фолк групи "Анета Бенд". Има настапувано на секаде во светот како Америка, Австралија, Канада и поголемиот дел од Европа. Познат е по музичките хитови "Ајше" , "Лично Наде" , "Села Пелистерски" и многу други. Голема популарност и успех постигнува во 2012год. со снимањето на музичката комедија "Патот до кенгурите" , исто така се појавува и во 2020год во филмот "Непријател". Стив е исто така декориран со различни награди, како "Оскар на Популарност" 2010,2011,2012". Моментално неговата улога е Бек Вокал или Пратечки вокал и придружни инструменти.</p>
                 </div>
             </div>
 
@@ -118,7 +201,7 @@
                     <div class="skills">
                         <span class="skill-item">РИТМИКА</span><span class="skill-item">ЕНЕРГИЈА</span>
                     </div>
-                    <p class="bio">Биографија – Александар Талевски Карма
+                    <p class="bio">Александар Талевски Карма
 Александар Талевски Карма е македонски музичар од Битола, роден на 13 мај 1981 година. Уште од најрана возраст покажува голема љубов кон музиката, а својот музички пат го започнува на само 14 години, кога започнува да настапува во локални ресторани и настани.
 По завршувањето на средното техничко училиште во Битола, целосно се посветува на музиката. Неговата специјалност се ударните инструменти – тапани, тарабука и селски тапан, преку кои создава препознатлив и автентичен ритам.
 Неговата професионална кариера започнува со членување во групата „Македонски Глас“, а подоцна продолжува во групата „Динамика“. Најзначајниот дел од својата кариера го поминува во легендарната група „Молика“, каде што е активен член од 2007 година, речиси 17 години. Со оваа група настапува во многу земји ширум светот, пренесувајќи ја македонската песна и музика со својот маестрален ритам.
@@ -128,7 +211,7 @@
             </div>
 
             <div class="member-profile" data-aos="fade-up">
-                <div class="member-img"><img src="zisko.jpg"></div>
+                <div class="member-img"><img src="zisko.jpg" alt="Zisko"></div>
                 <div class="member-info">
                     <span class="role-tag">Eлектрофонски Инструменти</span>
                     <h2>ЗИСО ПУРОВСКИ</h2>
@@ -178,118 +261,43 @@
             </div>
         </div>
 
-<a href="index.html" class="mobile-back-btn transition-link">ПОЧЕТНА</a>
+	<div class="member-profile" data-aos="fade-up">
+                <div class="member-img"><img src="jane.png" alt="Jane"></div>
+                <div class="member-info">
+                    <span class="role-tag">ВОКАЛ</span>
+                    <h2>ЈАНЕ ДИНЕВ</h2>
+                    <div class="skills">
+                        <span class="skill-item">АТМОСВЕРА</span><span class="skill-item">ЗАБАВА</span>
+                    </div>
+                    <p class="bio">Македонскиот пеач Јане Динев е роден 08.03.1999 година во Кавадарци . Уште од мали нозе, околината го препознала неговиот музички талент и посебната харизма .Тој својот музички пат го започнува уште на 18 години кога настапувал на разни настани и приватни забави, а пошироката публика го запозна преку настапи на музички телевизиски емисии. Својата музичка кариера моментално ја гради како пеач,неговата музикалност се надополнува со познавање на хармоника и синтисајзер.Тој се има појавувано на сцена со разни музичари но и како пеач во музичките групи Класико Бенд и Галакси Бенд.  Јане Динев важи за еден од младите музичари со голем потенцијал на македонската сцена и тој своето музичко творештво го продолжува како член на Анета Бенд, со кој продолжува да ја развива својата музичка кариера.</p>
+                </div>
+            </div>
 
-<style>
-    .mobile-back-btn {
-        display: none;
-        position: fixed;
-        bottom: 25px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        color: #fff;
-        text-decoration: none;
-        font-size: 0.6rem;
-        font-weight: 900;
-        padding: 12px 25px;
-        border-radius: 100px;
-        z-index: 1000;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        letter-spacing: 2px;
-    }
 
-    @media (max-width: 991px) {
-        .mobile-back-btn { display: block; }
-    }
-</style>
-
-<div id="loader" class="fade-out">
-    <div class="loader-content">
-        <div class="loader-logo">АНЕТА БЕНД</div>
-        <div class="loader-bar"><div class="progress"></div></div>
-    </div>
-</div>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 1000, once: true });
-
-    // Smooth Transition Logic
-    document.querySelectorAll('.transition-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = this.href;
-            const loader = document.getElementById('loader');
-            
-            loader.classList.remove('fade-out'); // Show loader
-            
-            setTimeout(() => {
-                window.location.href = target;
-            }, 800);
-        });
-    });
-</script>
-
-		
     </section>
 
-    <footer>
-        <p>&copy; 2026 ANETA BAND . АВТОРСКИ ПРАВА СЕ ЗАШТИТЕНИ © .</p>
-	<p>Автоматска заштита: Авторските права постојат веднаш кога делото е фиксирано во опиплива форма, не е потребна регистрација за основните права.
-Владеечко право: Законот за авторски права и сродни права (2010) е главното законодавство, ажуриран за да се усогласи со директивите на ЕУ.
-Заштитени дела: Опфаќа широк опсег, вклучувајќи литература, уметност, софтвер, мултимедија и архитектонски дизајни.
-Меѓународно почитување: Северна Македонија е членка на Бернската конвенција, обезбедувајќи реципрочна заштита со другите земји-членки и се придржува до договорите на WIPO.
-Важност на регистрацијата: Иако е автоматска, официјалната регистрација (на пр., кај Министерството за култура или приватни тела) обезбедува витален доказ за авторство, особено важно за дигитални контексти и спорови.
-Времетраење: Стандардната заштита е доживотен век на авторот плус 70 години, со специфични правила за анонимни дела или заедничко авторство.
-Колективно управување: Организации како AZAS (Здружение на корисници на авторски права и сродни права) управуваат со правата за креаторите, особено за музика и филм.</p>
-    </footer>
+    <a href="index.html" class="mobile-back-btn transition-link">ПОЧЕТНА</a>
+
+    <footer style="margin-top: 50px;">
+        <p>&copy; 2026 ANETA BAND . СИТЕ ПРАВА СЕ ЗАШТИТЕНИ © .</p>
+	<p>Авторските права во Северна Македонија се регулирани со Законот за авторски права и сродни права (2010, со измени) и автоматски ги штитат оригиналните дела, вклучувајќи литературни, музички, уметнички, аудиовизуелни, компјутерски програми и фотографски дела. Авторите имаат и морални права, како што е правото да бидат признати и да спречат злоупотреба на нивното дело, и економски права, вклучувајќи репродукција, дистрибуција, изведба и создавање деривативни дела. Авторските права генерално траат 70 години по смртта на авторот, додека сродните права за изведувачите, продуцентите и радиодифузерите траат околу 50 години. Северна Македонија е исто така членка на меѓународни договори како што се Бернската конвенција и СОИС, со што се обезбедува заштита за странски дела. </p>
+        
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4430192056941435"
-     crossorigin="anonymous"></script>
-<!-- Experimental -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4430192056941435"
-     data-ad-slot="7455588576"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-	<amp-ad width="100vw" height="320"
-     type="adsense"
-     data-ad-client="ca-pub-4430192056941435"
-     data-ad-slot="7455588576"
-     data-auto-format="rspv"
-     data-full-width="">
-  <div overflow=""></div>
-</amp-ad>
-	
+    <div style="text-align: center; padding: 20px 0;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4430192056941435"
+             data-ad-slot="7455588576"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>	
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
