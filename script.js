@@ -1,15 +1,32 @@
-// Page Loader logic
+// Function to hide loader
+const hideLoader = () => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.classList.add('fade-out');
+    }
+};
+
+// 1. Hide loader on initial load
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        const loader = document.getElementById('loader');
-        if (loader) loader.classList.add('fade-out');
-    }, 1000);
+    setTimeout(hideLoader, 1000);
 });
 
-// Initialize Animations
-AOS.init({ duration: 1000, once: true, disable: 'mobile' });
+// 2. CRITICAL: Fix for mobile "stuck" loader (bfcache)
+// This runs when you navigate back/forward on mobile
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        hideLoader();
+    }
+});
 
-// Modal Logic
+// 3. Initialize Animations
+AOS.init({ 
+    duration: 1000, 
+    once: true, 
+    disable: 'mobile' // Best for performance on older phones
+});
+
+// 4. Modal Logic
 const modal = document.getElementById('videoModal'),
       modalVideo = document.getElementById('modalVideo'),
       closeModal = document.querySelector('.close-modal'),
@@ -31,23 +48,29 @@ const closeAll = () => {
 if (closeModal) closeModal.addEventListener('click', closeAll);
 if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeAll(); });
 
-// Smooth Page Transitions
+// 5. Smart Page Transitions
 document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
-        
-        // Only trigger transition for internal page links (not anchors or tel)
-        if (this.hostname === window.location.hostname && 
+        const targetUrl = this.href;
+
+        // Don't show loader for: 
+        // - Anchor links on same page (#booking)
+        // - Phone links (tel:)
+        // - External links (target="_blank")
+        if (
+            this.hostname === window.location.hostname && 
             !href.startsWith('#') && 
             !href.includes('tel:') && 
-            !this.target) {
-            
+            this.target !== "_blank"
+        ) {
             e.preventDefault();
-            const target = this.href;
             const loader = document.getElementById('loader');
             if (loader) {
                 loader.classList.remove('fade-out');
-                setTimeout(() => { window.location.href = target; }, 800);
+                // Safety timeout: if page takes > 3s, hide loader anyway
+                setTimeout(() => { window.location.href = targetUrl; }, 600);
+                setTimeout(hideLoader, 3000); 
             }
         }
     });
