@@ -20,14 +20,28 @@
         .lang-switch span { color: #fff; border-bottom: 1px solid #fff; }
         .privacy-link { display: block; margin-top: 15px; color: #666; font-size: 11px; text-decoration: none; }
         .privacy-link:hover { color: #fff; }
+
+        /* Menu Button Styling */
+        .menu-trigger {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
     </style>
 </head>
 <body>
 
     <div class="floating-lang">
-    <span class="active">EN</span> | <a href="index-mk.html">MK</a>
-</div>
-    
+        <span class="active">EN</span> | <a href="index-mk.html">MK</a>
+    </div>
 
     <div id="loader">
         <div class="loader-content">
@@ -40,19 +54,33 @@
         <div class="logo">ANETA BEND</div>
         <div class="links">
             <a href="#hero">HOME</a>
-            <a href="#events">CONCERTS</a> 
             <a href="members.html">MEMBERS</a> 
+            <a href="#about">ABOUT</a>
             <a href="#booking">CONTACT</a>
-            
+            <button class="menu-trigger open-menu"><span>MORE</span> ☰</button>
         </div>
     </nav>
 
     <nav class="bottom-nav">
         <a href="#hero">HOME</a>
-        <a href="#events">CONCERTS</a>
         <a href="members.html">MEMBERS</a> 
         <a href="#booking">CONTACT</a>
+        <button class="menu-trigger open-menu" style="flex:1; justify-content:center;">MENU</button>
     </nav>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-overlay">&times;</button>
+        <div class="overlay-content">
+            <p style="color: #444; letter-spacing: 5px; font-size: 0.7rem; font-weight: 900; margin-bottom: 20px;">LEGAL & INFO</p>
+            <a href="terms.html" class="overlay-link">TERMS</a>
+            <a href="privacy.html" class="overlay-link">PRIVACY</a>
+            <a href="#about" class="overlay-link close-on-click">ABOUT US</a>
+            <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center;">
+                <a href="https://www.instagram.com/aneta_bend/" target="_blank" style="color:#fff; font-size: 0.8rem; text-decoration:none;">IG</a>
+                <a href="https://www.youtube.com/@AnetaLjumakovska" target="_blank" style="color:#fff; font-size: 0.8rem; text-decoration:none;">YT</a>
+            </div>
+        </div>
+    </div>
 
     <section id="hero" class="hero">
         <div class="hero-inner" data-aos="fade-up">
@@ -61,10 +89,26 @@
         </div>
     </section>
 
-    <section id="intro" style="padding: 100px 10%; text-align: center; background: #050505; border-bottom: 1px solid #111;">
-        <h2 data-aos="fade-up" style="margin-bottom: 30px; letter-spacing: 5px;">BIOGRAPHY</h2>
-        <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: #aaa; font-size: 1.1rem;" data-aos="fade-up">
-            <p>Aneta Bend is a world-renowned musical ensemble led by the powerhouse vocals of <strong>Aneta Ljumakovska</strong>. Based in Bitola, North Macedonia, the band is celebrated for blending soulful Balkan traditions with contemporary musical excellence. With millions of views on YouTube and a legacy of performances across Europe, Australia, and North America, Aneta Bend remains at the forefront of the Macedonian music scene.</p>
+    <section id="about" style="padding: 100px 10%; background: #050505; border-bottom: 1px solid #111;">
+        <h2 data-aos="fade-up" style="margin-bottom: 50px; letter-spacing: 5px; text-align: center;">ABOUT THE BAND</h2>
+        <div class="about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto;">
+            <div data-aos="fade-right">
+                <p style="line-height: 1.8; color: #aaa; font-size: 1.1rem; margin-bottom: 20px;">
+                    Based in Bitola, North Macedonia, <strong>Aneta Band</strong> represents the pinnacle of modern Balkan music fusion. Led by the powerhouse vocals of <strong>Aneta Ljumakovska</strong>, the ensemble is celebrated for blending soulful traditions with contemporary musical excellence.
+                </p>
+                <p style="line-height: 1.8; color: #888;">
+                    With millions of views on YouTube and a legacy of performances across Europe, Australia, and North America, the band remains at the forefront of the Macedonian music scene, bridging cultural heritage with world-class performance.
+                </p>
+            </div>
+            <div data-aos="fade-left" style="background: #0a0a0a; padding: 40px; border: 1px solid #151515;">
+                <h3 style="font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 3px; color: #fff; margin-bottom: 20px;">KEY HIGHLIGHTS</h3>
+                <ul style="list-style: none; padding: 0; color: #666; font-size: 0.9rem;">
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #111; padding-bottom: 10px;">• Over 15 years of professional musical experience.</li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #111; padding-bottom: 10px;">• Global tours including Europe, Australia, and USA.</li>
+                    <li style="margin-bottom: 15px; border-bottom: 1px solid #111; padding-bottom: 10px;">• Millions of collective streams on official platforms.</li>
+                    <li>• Specialized in premium wedding and concert entertainment.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -173,6 +217,7 @@
         <div class="copyright-legal">
             <p>Copyright infringement is the unauthorized use, reproduction, distribution, or performance of protected, original work without the owner's permission. Protected under the Copyright and Related Rights Act (2010).</p>
             <a href="privacy.html" class="privacy-link">Privacy Policy</a>
+            <a href="terms.html" class="privacy-link">Terms of Service</a>
         </div>
     </footer>
 
