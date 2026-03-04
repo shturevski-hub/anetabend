@@ -3,16 +3,22 @@ const hideLoader = () => {
     const loader = document.getElementById('loader');
     if (loader) {
         loader.classList.add('fade-out');
+        // Physically remove from display after transition to prevent click blocking
+        setTimeout(() => { 
+            if(loader.classList.contains('fade-out')) loader.style.display = 'none'; 
+        }, 1000);
     }
 };
 
-// 1. Hide loader on initial load
+// 1. Initial Load Logic
 window.addEventListener('load', () => {
-    setTimeout(hideLoader, 1000);
+    setTimeout(hideLoader, 500); // Reduced delay for better UX
 });
 
+// Failsafe: Hide loader anyway after 4 seconds if 'load' event hangs
+setTimeout(hideLoader, 4000);
+
 // 2. CRITICAL: Fix for mobile "stuck" loader (bfcache)
-// This runs when you navigate back/forward on mobile
 window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
         hideLoader();
@@ -23,7 +29,7 @@ window.addEventListener('pageshow', (event) => {
 AOS.init({ 
     duration: 1000, 
     once: true, 
-    disable: 'mobile' // Best for performance on older phones
+    disable: 'mobile' 
 });
 
 // 4. Modal Logic
@@ -32,45 +38,58 @@ const modal = document.getElementById('videoModal'),
       closeModal = document.querySelector('.close-modal'),
       triggers = document.querySelectorAll('.video-trigger');
 
-triggers.forEach(t => t.addEventListener('click', () => {
-    const videoSrc = t.dataset.video;
-    modalVideo.src = videoSrc + (videoSrc.includes('?') ? '&' : '?') + "autoplay=1";
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}));
+if (triggers.length > 0) {
+    triggers.forEach(t => t.addEventListener('click', (e) => {
+        e.preventDefault();
+        const videoSrc = t.dataset.video;
+        if (modalVideo) {
+            modalVideo.src = videoSrc + (videoSrc.includes('?') ? '&' : '?') + "autoplay=1";
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }));
+}
 
 const closeAll = () => { 
-    modal.classList.remove('active'); 
-    modalVideo.src = ""; 
-    document.body.style.overflow = 'auto'; 
+    if (modal) {
+        modal.classList.remove('active'); 
+        if (modalVideo) modalVideo.src = ""; 
+        document.body.style.overflow = 'auto'; 
+    }
 };
 
 if (closeModal) closeModal.addEventListener('click', closeAll);
 if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeAll(); });
 
-// 5. Smart Page Transitions
+// 5. Smart Page Transitions (Optimized)
 document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         const targetUrl = this.href;
 
-        // Don't show loader for: 
-        // - Anchor links on same page (#booking)
-        // - Phone links (tel:)
-        // - External links (target="_blank")
+        // Validation for internal navigation
         if (
+            href &&
             this.hostname === window.location.hostname && 
             !href.startsWith('#') && 
             !href.includes('tel:') && 
-            this.target !== "_blank"
+            !href.includes('mailto:') &&
+            this.target !== "_blank" &&
+            !e.metaKey && !e.ctrlKey // Allow cmd/ctrl + click to open in new tab
         ) {
-            e.preventDefault();
             const loader = document.getElementById('loader');
             if (loader) {
+                e.preventDefault();
+                loader.style.display = 'flex'; // Ensure it's visible
                 loader.classList.remove('fade-out');
-                // Safety timeout: if page takes > 3s, hide loader anyway
-                setTimeout(() => { window.location.href = targetUrl; }, 600);
-                setTimeout(hideLoader, 3000); 
+                
+                // Navigate after short delay
+                setTimeout(() => { 
+                    window.location.href = targetUrl; 
+                }, 400);
+
+                // Ultimate safety: hide if navigation fails
+                setTimeout(hideLoader, 5000);
             }
         }
     });
