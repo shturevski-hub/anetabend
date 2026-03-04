@@ -136,3 +136,43 @@ footer { text-align: center; padding: 60px 5% 120px; font-size: 0.6rem; color: #
     .event-date .day { line-height: 1; }
     .event-info { flex-grow: 1; padding-left: 40px; }
 }
+
+/* Floating Language Toggle */
+.floating-lang {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 8px 15px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.floating-lang a {
+    color: #666;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.floating-lang a:hover {
+    color: #fff;
+}
+
+.floating-lang span.active {
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .floating-lang {
+        top: auto;
+        bottom: 85px; /* Sits above your bottom-nav */
+        right: 20px;
+    }
+}
