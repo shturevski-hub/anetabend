@@ -10,27 +10,45 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
-    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4430192056941435" crossorigin="anonymous"></script>
 
     <style>
+        /* Floating Language Toggle */
+        .floating-lang {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 8px 15px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        .floating-lang a { color: #666; text-decoration: none; transition: 0.3s; }
+        .floating-lang a:hover { color: #fff; }
+        .floating-lang span.active { color: #fff; border-bottom: 1px solid #fff; }
+
         /* Local Wiki Overrides */
         .wiki-section {
             margin-top: 80px;
-            padding-bottom: 100px;
+            padding: 0 5% 100px 5%;
         }
-
         .wiki-title {
             font-size: clamp(3rem, 12vw, 6rem);
             margin-bottom: 60px;
             text-transform: uppercase;
         }
-
         .members-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 60px;
         }
-
         .member-profile {
             display: flex;
             flex-direction: column;
@@ -38,7 +56,6 @@
             border-bottom: 1px solid #111;
             padding-bottom: 60px;
         }
-
         .member-img {
             width: 100%;
             aspect-ratio: 1/1;
@@ -46,24 +63,20 @@
             overflow: hidden;
             border-radius: 4px;
         }
-
         .member-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .member-profile:hover .member-img img {
             transform: scale(1.08);
         }
-
         .member-info h2 {
             font-size: clamp(1.8rem, 5vw, 3rem);
             margin-bottom: 10px;
             line-height: 1.1;
         }
-
         .role-tag {
             font-weight: 900;
             color: #666;
@@ -73,14 +86,12 @@
             display: block;
             text-transform: uppercase;
         }
-
         .skills {
             margin-bottom: 25px;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-
         .skill-item {
             background: #fff;
             color: #000;
@@ -90,7 +101,6 @@
             border-radius: 2px;
             text-transform: uppercase;
         }
-
         .bio {
             color: #aaa;
             line-height: 1.8;
@@ -106,7 +116,6 @@
             .member-info { padding-left: 50px; }
         }
 
-        /* Fixed Navigation Fixes */
         .mobile-back-btn {
             display: none;
             position: fixed;
@@ -129,16 +138,16 @@
 
         @media (max-width: 991px) {
             .mobile-back-btn { display: block; }
+            .floating-lang { top: auto; bottom: 85px; right: 20px; }
         }
     </style>
 </head>
 <body>
 
-<div class="floating-lang">
-    <span class="active">EN</span> | <a href="members-mk.html">MK</a>
-</div>
+    <div class="floating-lang">
+        <span class="active">EN</span> | <a href="members-mk.html">MK</a>
+    </div>
 
-	
     <div id="loader">
         <div class="loader-content">
             <div class="loader-logo">ANETA BAND</div>
@@ -149,7 +158,7 @@
     <nav class="desktop-nav">
         <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">ANETA BAND</a></div>
         <div class="links">
-            <a href="index.html">ANETA BAND</a>
+            <a href="index.html">HOME</a>
         </div>
     </nav>
 
@@ -165,9 +174,7 @@
                     <div class="skills">
                         <span class="skill-item">TECHNIQUE</span><span class="skill-item">ATMOSPHERE</span>
                     </div>
-                    <p class="bio">Aneta Ljumakovska was born on 25.07.1983 in Bitola and is a famous Macedonian singer and one of the most recognizable performers of folk and newly composed music in Macedonia and the region. ​She graduated from a technical high school in her hometown. 
-From a young age, she showed a strong interest and talent for music. ​With her specific voice, emotional interpretation and authentic style, Aneta quickly won the attention of the audience and received countless awards at festivals both in Macedonia and in the neighboring countries. ​As a former member of "Molika", she has performed at numerous concerts, festivals, and cultural events, both in the country and in the diaspora.
-During her career, she has performed a number of hits that are well received by the audience and are often part of the Macedonian folk scene. ​Aneta is now part of the Aneta Band together with some of the members of "Molika" and is appreciated for her professionalism, modesty and dedication to music, and her performances are recognizable by the strong emotion and contact with the audience.</p>
+                    <p class="bio">Aneta Ljumakovska was born on 25.07.1983 in Bitola and is a famous Macedonian singer and one of the most recognizable performers of folk and newly composed music in Macedonia and the region. She graduated from a technical high school in her hometown. From a young age, she showed a strong interest and talent for music. With her specific voice, emotional interpretation and authentic style, Aneta quickly won the attention of the audience and received countless awards at festivals both in Macedonia and in the neighboring countries. As a former member of "Molika", she has performed at numerous concerts, festivals, and cultural events, both in the country and in the diaspora. During her career, she has performed a number of hits that are well received by the audience and are often part of the Macedonian folk scene. Aneta is now part of the Aneta Band together with some of the members of "Molika" and is appreciated for her professionalism, modesty and dedication to music.</p>
                 </div>
             </div>
 
@@ -177,9 +184,9 @@ During her career, she has performed a number of hits that are well received by 
                     <span class="role-tag">VOCAL</span>
                     <h2>STIV SHTUREVSKI</h2>
                     <div class="skills">
-                        <span class="skill-item">WRITTER</span><span class="skill-item">BACK VOCAL</span>
+                        <span class="skill-item">WRITER</span><span class="skill-item">BACK VOCAL</span>
                     </div>
-                    <p class="bio">Steve Sturevski, Macedonian singer, composer, arranger and actor. ​Born on 22-1-1975 in Ohrid, Republic of Macedonia. ​Completed secondary technical education. ​Music mentoring education. He comes from a large musical family, so from the youngest age he is completely devoted to music as a harmonica player, synthesizer and mainly vocals. ​He was a member of many Macedonian music groups, such as "Group Fontana", "Group Molika". ​After a long career, he temporarily retired from the profession in 2016. ​Now again to be an active member of one of the best Macedonian folk groups "Aneta Band". ​He has performed all over the world, including America, Australia, Canada and most of Europe. ​He is known for the music hits "Ajshe", "Lichno Nade", "Sela Pelisterski" and many others. ​He achieved great popularity and success in 2012 with the recording of the musical comedy "The Road to the Kangaroos", he also appeared in 2020 in the film "Enemy". ​Steve has also been decorated with various awards, such as the "Oscar of Popularity" 2010, 2011, 2012. ​Currently his role is Back Vocal or Accompanying Vocal and Accompanying Instruments.</p>
+                    <p class="bio">Stiv Shturevski, Macedonian singer, composer, arranger and actor. Born on 22-1-1975 in Ohrid, Republic of Macedonia. Completed secondary technical education. He comes from a large musical family, so from the youngest age he is completely devoted to music as a harmonica player, synthesizer and mainly vocals. He was a member of many Macedonian music groups, such as "Group Fontana" and "Group Molika". After a long career, he temporarily retired from the profession in 2016. Now again to be an active member of one of the best Macedonian folk groups "Aneta Band". He has performed all over the world, including America, Australia, Canada and most of Europe. He is known for the music hits "Ajshe", "Lichno Nade", "Sela Pelisterski" and many others.</p>
                 </div>
             </div>
 
@@ -191,82 +198,47 @@ During her career, she has performed a number of hits that are well received by 
                     <div class="skills">
                         <span class="skill-item">PRECISION</span><span class="skill-item">RHYTHM</span>
                     </div>
-                    <p class="bio">Rubin Razmoski was born on 19.09.1982 in Prilep, where he showed his love and talent for music from a young age. ​He is a prominent Macedonian musician who is recognizable by his wind instruments with which he began to cultivate the tradition as a young member of KUD Mirce Acev from Prilep, and his style has a significant influence on the recognizable sound of Macedonian music.
-With many years of dedication, Razmoski has established himself as a top instrumentalist, known for his technical skills, sense of rhythm and authentic interpretation of Macedonian folk and newly composed music. 
-As a former member of "Molika", Rubin Razmoski has performed at numerous concerts, festivals, cultural events and private events, both in Macedonia and abroad. ​As a member of Aneta Band, his role in the group is crucial, both on stage and behind it. 
-Rubin Razmoski is valued among colleagues and audiences as a professional, innovative musician and guardian of the Macedonian musical tradition, who successfully combines tradition with contemporary sound.</p>
+                    <p class="bio">Rubin Razmoski was born on 19.09.1982 in Prilep. He is a prominent Macedonian musician who is recognizable by his wind instruments with which he began to cultivate the tradition as a young member of KUD Mirce Acev from Prilep. Razmoski has established himself as a top instrumentalist, known for his technical skills and authentic interpretation of Macedonian folk and newly composed music. As a former member of "Molika", Rubin has performed at numerous concerts and festivals worldwide. As a member of Aneta Band, his role in the group is crucial, both on stage and behind it.</p>
                 </div>
             </div>
 
             <div class="member-profile" data-aos="fade-up">
-                <div class="member-img"><img src="karma.png" alt="karmata"></div>
+                <div class="member-img"><img src="karma.png" alt="Karma"></div>
                 <div class="member-info">
                     <span class="role-tag">DRUMS</span>
                     <h2>ALEKSANDAR (KARMATA) TALEVSKI</h2>
                     <div class="skills">
                         <span class="skill-item">RHYTHM</span><span class="skill-item">ENERGY</span>
                     </div>
-                    <p class="bio">Alexander Talevski Karma
-Aleksandar Talevski Karma is a Macedonian musician from Bitola, born on May 13, 1981. From an early age, he shows a great love for music, and he begins his musical journey at only 14 years old, when he starts performing in local restaurants and events.
-After finishing secondary technical school in Bitola, he devoted himself completely to music. His specialty is percussion instruments – drums, tarabuka and village drum, through which he creates a recognizable and authentic rhythm.
-His professional career began with membership in the group „Macedonian Voice“, and later continued in the group „Dynamics“. He spends the most significant part of his career in the legendary group „Molika“, where he has been an active member since 2007, for almost 17 years. With this group, he performs in many countries around the world, conveying Macedonian song and music with his masterful rhythm.
-During his career, Alexander performed in Australia, the USA, Canada and throughout Europe, and with his colleagues they won numerous awards and recognitions. As part of their achievements, they also made the musical film „The Road to Kangaroos“, which is a significant project in their artistic work.
-Today he is an active member of „Aneta Band“, where he continues to create and enrich the Macedonian music scene with his talent and experience.</p>
+                    <p class="bio">Aleksandar Talevski Karma is a Macedonian musician from Bitola, born on May 13, 1981. His specialty is percussion instruments – drums, tarabuka and village drum, through which he creates a recognizable and authentic rhythm. He spends the most significant part of his career in the legendary group „Molika“, where he has been an active member since 2007. During his career, Alexander performed in Australia, the USA, Canada and throughout Europe. Today he is an active member of „Aneta Band“, where he continues to enrich the Macedonian music scene with his talent and experience.</p>
                 </div>
             </div>
 
             <div class="member-profile" data-aos="fade-up">
                 <div class="member-img"><img src="zisko.jpg" alt="Zisko"></div>
                 <div class="member-info">
-                    <span class="role-tag">ELECTROPHONIC INSTRUMENTS</span>
+                    <span class="role-tag">KEYBOARDS</span>
                     <h2>ZISO PUROVSKI</h2>
                     <div class="skills">
                         <span class="skill-item">MELODY</span><span class="skill-item">ATMOSPHERE</span>
                     </div>
-                    <p class="bio">Ziso Purovski was born in 1975 in Bitola.
-He completed his secondary education in 1994 at the secondary music school in Bitola.
-He graduated from the Faculty of Music in 1998 in Skopje, and completed his master's studies in 2003.
-As cellist (member (and one of the founders ) he performed with the contemporary music ensemble “Alea”.
-He attended several seminars and master courses with Anatoly Krstev, Kiril Rodin, etc. He attended several master courses in contemporary music!
-The founder of the string quartet “ARKO” and with it he performed numerous performances both in the country and abroad (Europe, Ukraine, Serbia, Greece Macedonia, leaving behind numerous successful concerts, festivals and solo performances.
-He currently works as a full professor of cello at the secondary music school in Bitola.</p>
+                    <p class="bio">Ziso Purovski was born in 1975 in Bitola. He completed his secondary education in 1994 at the secondary music school in Bitola and graduated from the Faculty of Music in 1998 in Skopje. As a cellist, he was a founder of the contemporary music ensemble “Alea” and the string quartet “ARKO”, with which he performed numerous concerts across Europe. He currently works as a full professor of cello at the secondary music school in Bitola while performing as a key member of Aneta Band.</p>
                 </div>
             </div>
 
             <div class="member-profile" data-aos="fade-up">
                 <div class="member-img"><img src="vangel.jpg" alt="Vangel"></div>
                 <div class="member-info">
-                    <span class="role-tag">ELECTROPHONIC INSTRUMENTS</span>
+                    <span class="role-tag">KEYBOARDS</span>
                     <h2>VANGEL MAZHEVSKI</h2>
                     <div class="skills">
                         <span class="skill-item">PROFESSIONAL</span><span class="skill-item">PRECISE</span>
                     </div>
-                    <p class="bio">Born on January 20, 1986, in Bitola, R. Macedonia
-
-Education: He started his secondary music education at the State Music School – Bitola in 2000, majoring in theory. After finishing high school, he went to Salzburg, where he took the entrance exams in composition at the Mozart Conservatory, from where he returned to Macedonia for justified reasons. After a two-year break, he continues his higher education, undergraduate studies at the University of St. „Kiril and Metodij“ – at the Faculty of Music in Skopje, Department of Music Theory and Pedagogy. He has exceptional talent, and he especially stands out for his professional theoretical subjects, compositional and improvisational abilities, piano, etc.  Since his high school days until today, he has been professionally engaged in composing and orchestrating/arranging.
-
-He graduated in 2011, in which he enrolled in a master's degree in the subject “Harmony with harmonic analysis” under the mentorship of Zivoin Glisic. Since August 2012, – has been the founder of the Jazz Screenplay lineup as an art director, composer, arranger and pianist.
-
-In 2012, he started teaching in theoretical professional subjects at DMU „Todor Skalovski – Tetoec“, and after a short period of 2013 at the State Music School in Bitola as a professor of harmony, composition, contact solfege and piano. In 2015, he enrolled in undergraduate studies at the Faculty of Musical Arts in Skopje in the field of Orchestral Conducting with Professor Sasha Nikolovski – Gjumar. In 2017, through the Erasmus Plus exchange program, he listened to a dig at the Music Academy in Ljubljana, Slovenia, with professors Marko Letonja, Marko Hibernik and Simon Dvorsak.
-
-He is professionally engaged in audio production, mixing and mastering.
-
-For many years he has been collaborating with the Bitola Chamber Orchestra as an arranger and performer.
-
-He is a participant in several state and international competitions as a jury committee, including Piano Fest – Bitola as a jury committee for chamber music.
-
-At the beginning of 2024, he collaborated with Piano Trio Trifonika, who, within 77 years of the establishment of the State Music School – Bitola, premiered his composition “Variations on the theme Macedonian girl” for piano for 6 hands, which was specially composed and dedicated to Trio Trifonika.
-
-Awards:
-
-2003 – Solfeggio – first prize
-
-2009 – Solfeggio – Special Award</p>
+                    <p class="bio">Born on January 20, 1986, in Bitola. He graduated from the Faculty of Music in Skopje, Department of Music Theory and Pedagogy. Since 2013, he has served as a professor of harmony and composition. He is professionally engaged in audio production, mixing, and mastering, and has collaborated extensively with the Bitola Chamber Orchestra as an arranger and performer. At the beginning of 2024, he premiered his composition “Variations on the theme Macedonian girl” for piano.</p>
                 </div>
             </div>
-        </div>
 
-	<div class="member-profile" data-aos="fade-up">
+            <div class="member-profile" data-aos="fade-up">
                 <div class="member-img"><img src="jane.png" alt="Jane"></div>
                 <div class="member-info">
                     <span class="role-tag">VOCAL</span>
@@ -274,25 +246,11 @@ Awards:
                     <div class="skills">
                         <span class="skill-item">ATMOSPHERE</span><span class="skill-item">PARTY</span>
                     </div>
-                    <p class="bio">The Macedonian singer Jane Dinev was born on March 8, 1999 in Kavadarci. From an early age, the environment recognized his musical talent and special charisma.He started his musical journey at the age of 18 when he performed at various events and private parties, and the wider audience got to know him through performances on music television shows. He is currently building his musical career as a singer, his musicality is complemented by knowledge of accordion and synthesizer. He has appeared on stage with various musicians but also as a singer in the music groups Clasico Band and Galaxy Band.  Jane Dinev is considered one of the young musicians with great potential on the Macedonian scene and he continues his musical work as a member of Aneta Band, with which he continues to develop his musical career.</p>
+                    <p class="bio">Jane Dinev was born on March 8, 1999 in Kavadarci. He started his musical journey at the age of 18 and became known to the wider audience through performances on music television shows. His musicality is complemented by knowledge of accordion and synthesizer. Jane Dinev is considered one of the young musicians with great potential on the Macedonian scene and continues his professional journey as a member of Aneta Band.</p>
                 </div>
             </div>
-
-
+        </div>
     </section>
-
-    <a href="index.html" class="mobile-back-btn transition-link">HOME</a>
-
-    <footer style="margin-top: 50px;">
-        <p>&copy; 2026 ANETA BAND . СИТЕ ПРАВА СЕ ЗАШТИТЕНИ © .</p>
-	<p>Copyright in North Macedonia is regulated by the Copyright and Related Rights Act (2010, with amendments) and automatically protects original works, including literary, musical, artistic, audiovisual, computer programs and photographic works. Authors have both moral rights, such as the right to be recognized and prevent abuse of their work, and economic rights, including reproduction, distribution, performance, and the creation of derivative works. Copyright generally lasts 70 years after the author's death, while related rights for performers, producers and broadcasters last about 50 years. North Macedonia is also a member of international agreements such as the Berne Convention and WIPO, thus providing protection for foreign acts. </p>
-        
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
 
     <div style="text-align: center; padding: 20px 0;">
         <ins class="adsbygoogle"
@@ -302,12 +260,20 @@ Awards:
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>	
+    </div>
+
+    <a href="index.html" class="mobile-back-btn">HOME</a>
+
+    <footer style="margin-top: 50px; padding: 40px 5%; border-top: 1px solid #111; color: #555; font-size: 12px; line-height: 1.6;">
+        <p style="color: #fff; font-weight: 700; margin-bottom: 10px;">&copy; 2026 ANETA BAND | ALL RIGHTS RESERVED</p>
+        <p>Copyright in North Macedonia is regulated by the Copyright and Related Rights Act (2010). This site and its content are protected under international agreements such as the Berne Convention and WIPO.</p>
+        <a href="privacy.html" style="color: #777; text-decoration: none; margin-top: 10px; display: inline-block;">Privacy Policy</a>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
