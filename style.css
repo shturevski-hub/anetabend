@@ -46,7 +46,7 @@ a {
 
 /* --- NAVIGATION SYNC (DESKTOP) --- */
 .desktop-nav {
-    display: none; /* Hidden on mobile */
+    display: none; 
     position: fixed;
     top: 0; width: 100%;
     padding: 20px 5%;
@@ -108,7 +108,7 @@ a {
     margin: 0 auto;
 }
 
-/* --- VIDEO GALLERY --- */
+/* --- VIDEO GALLERY (COLORFUL) --- */
 #vault { padding: 100px 5%; }
 #vault h2 { text-align: center; margin-bottom: 50px; letter-spacing: 5px; }
 .mini-video-grid {
@@ -119,8 +119,8 @@ a {
 
 .video-thumb { cursor: pointer; }
 .thumb-box { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: #111; margin-bottom: 10px; }
-.thumb-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; filter: grayscale(1); }
-.video-thumb:hover img { transform: scale(1.05); filter: grayscale(0); }
+.thumb-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.video-thumb:hover img { transform: scale(1.05); }
 .thumb-meta { font-size: 0.7rem; font-weight: 900; letter-spacing: 1px; color: #444; }
 .thumb-meta span { color: #fff; }
 
@@ -169,15 +169,17 @@ a {
     font-size: 2.5rem; font-weight: 900; text-transform: uppercase;
     margin: 15px 0; transition: 0.3s; font-family: 'Montserrat', sans-serif;
 }
-.overlay-link:hover { opacity: 0.5; }
+.overlay-link:hover { color: #888; }
 .close-overlay {
     position: absolute; top: 30px; right: 30px;
     background: none; border: none; color: #fff; font-size: 3rem; cursor: pointer;
 }
 
 /* --- FOOTER --- */
-footer { padding: 80px 10%; background: #000; text-align: center; border-top: 1px solid #111; }
+footer { padding: 80px 10% 120px; background: #000; text-align: center; border-top: 1px solid #111; }
 footer p { font-size: 0.7rem; color: #333; letter-spacing: 1px; font-weight: 700; margin-bottom: 20px; }
+.footer-nav { margin-bottom: 25px; }
+.footer-nav a:hover { color: #fff !important; text-decoration: underline; }
 .copyright-legal p { font-size: 10px; color: #222; max-width: 600px; margin: 0 auto; line-height: 1.5; }
 
 /* --- MODAL --- */
@@ -206,4 +208,5 @@ footer p { font-size: 0.7rem; color: #333; letter-spacing: 1px; font-weight: 700
 @media (max-width: 768px) {
     .event-row { flex-direction: column; text-align: center; }
     .hero h1 { font-size: 4rem; }
+    .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 }
